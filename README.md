@@ -51,7 +51,7 @@
 ├── static                                              -----公共资源
 │   └── js                                              -----js资源
 │       ├── common                                      -----公共bundle目录
-│       │   ├── async.44462b832164f1d8b0d2.css          -----异步chunk的bundle样式
+│       │   ├── async.44462b832164f1d8b0d2.css          -----异步chunk的bundle样式
 │       │   └── async.44462b832164f1d8b0d2.js           -----异步chunk的bundle
 │       ├── runtime.87712839d5214552a4ce.js             -----manifest
 │       └── vendor.59bdbd89d62d8a29335a.js              -----nodule_modules
