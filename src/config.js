@@ -4,9 +4,8 @@ module.exports = {
   dev: {
     whiteList: [
       'topic',
+      'activity',
     ],
-    blackList: [
-      '',
-    ],
+    blackList: [],
   },
 };
