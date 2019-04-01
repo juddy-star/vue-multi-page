@@ -1,0 +1,71 @@
+{
+  "name": "vue-multi-page",
+  "version": "1.0.0",
+  "description": "vue的多页应用解决方案",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --color --progress --config build/dev.js",
+    "build": "node build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juddy-star/vue-multi-page.git"
+  },
+  "keywords": [
+    "vue",
+    "multipart",
+    "page",
+    "multi-page",
+    "webpack"
+  ],
+  "author": "juddy-star",
+  "email": "654312777@qq.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juddy-star/vue-multi-page/issues"
+  },
+  "homepage": "https://github.com/juddy-star/vue-multi-page#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-stage-0": "^7.0.0",
+    "autoprefixer": "^9.5.0",
+    "babel-loader": "^8.0.5",
+    "bluebird": "^3.5.3",
+    "chalk": "^2.4.2",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-notifier": "^5.4.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "ora": "^3.2.0",
+    "portfinder": "^1.0.20",
+    "postcss": "^7.0.14",
+    "postcss-loader": "^3.0.0",
+    "postcss-px-to-viewport": "^1.1.0",
+    "precss": "^4.0.0",
+    "sass-loader": "^7.1.0",
+    "stylus-loader": "^3.0.2",
+    "terser-webpack-plugin": "^1.2.3",
+    "url-loader": "^1.1.2",
+    "vue-loader": "^15.7.0",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.2"
+  }
+}
