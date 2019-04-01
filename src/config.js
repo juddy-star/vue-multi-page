@@ -1,6 +1,6 @@
 module.exports = {
   // 域路径
-  domain: 'appServer',
+  domain: 'serverApp',
   dev: {
     whiteList: [
       'topic',
