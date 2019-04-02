@@ -18,7 +18,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
-    alias: {
+    alias: Object.assign({
       '@': resolve('src'),
       common: resolve('src/common'),
       components: resolve('src/components'),
@@ -26,8 +26,7 @@ module.exports = {
       pages: resolve('src/pages'),
       api: resolve('src/api'),
       utils: resolve('src/utils'),
-      ...projectAliasMap,
-    },
+    }, projectAliasMap),
   },
   optimization: {
     splitChunks: {
@@ -64,8 +63,8 @@ module.exports = {
         options: {
           limit: 10000,
           // 当不满足limit，调用file-loader，执行name函数
-          name(path = ''){
-            return projectFileLoaderMap(path,'img');
+          name(path = '') {
+            return projectFileLoaderMap(path, 'img');
           }
         },
       },
@@ -75,8 +74,8 @@ module.exports = {
         options: {
           limit: 10000,
           // 当不满足limit，调用file-loader，执行name函数
-          name(path = ''){
-            return projectFileLoaderMap(path,'media');
+          name(path = '') {
+            return projectFileLoaderMap(path, 'media');
           }
         },
       },
@@ -85,9 +84,9 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-           // 当不满足limit，调用file-loader，执行name函数
-           name(path = ''){
-            return projectFileLoaderMap(path,'fonts');
+          // 当不满足limit，调用file-loader，执行name函数
+          name(path = '') {
+            return projectFileLoaderMap(path, 'fonts');
           }
         },
       },

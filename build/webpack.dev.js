@@ -34,12 +34,9 @@ const webpackDevConfig = {
     disableHostCheck: true,
     // HTML5 history模式
     historyApiFallback: {
-      rewrites: [
-        ...projectHistoryList
-      ]
+      rewrites: [].concat(projectHistoryList)
     },
-    proxy: {
-    },
+    proxy: {},
   },
   module: {
     rules: [{
@@ -57,10 +54,10 @@ const webpackDevConfig = {
       ]
     }]
   },
-  plugins: [
+  plugins: [].concat(
     // 每一个项目的htmlWebpackPlugin
-    ...getPHWPConfigList('development').map(config => new HtmlWebpackPlugin(config)),
-  ]
+    getPHWPConfigList('development').map(config => new HtmlWebpackPlugin(config))
+  )
 };
 
 module.exports = merge(

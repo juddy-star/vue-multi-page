@@ -17,7 +17,7 @@ const projectEntryName = 'main.js';
 
 
 const resolve = (...srcs) => {
-  return path.resolve.apply(path, [process.cwd(), ...srcs]);
+  return path.resolve.apply(path, [process.cwd()].concat(srcs));
 };
 
 
@@ -72,11 +72,12 @@ const getProjectConfigMap = (env = 'production') => {
     // 如果是dev环境，则加入黑白名单的判断
     if (env === 'development' && !islegalProjectName(projectName)) return total;
 
-    total[projectName] = {
-      projectUpperDir,
-      projectFolderName,
-      ...projectConfig
-    };
+    total[projectName] = Object.assign({
+        projectUpperDir,
+        projectFolderName,
+      },
+      projectConfig
+    );
 
     return total;
   };

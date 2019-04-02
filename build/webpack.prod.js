@@ -17,7 +17,6 @@ const {
   domain
 } = require(resolve('src/config'));
 
-
 const webpackProdConfig = {
   mode: 'production',
   entry: getProjectEntryMap('production'),
@@ -29,19 +28,20 @@ const webpackProdConfig = {
   },
   optimization: {
     splitChunks: {
-      cacheGroups: {
-        // 每一个项目的commonChunk
-        ...projectCommonChunkMap,
-        commonAsync: {
-          test: /src\/(?!pages)/,
-          chunks: 'async',
-          minChunks: 2,
-          minSize: 0,
-          maxAsyncRequests: 5, // 最大异步请求数， 默认5
-          name: 'static/js/common/async',
-          priority: 10,
+      cacheGroups: Object.assign({
+          commonAsync: {
+            test: /src\/(?!pages)/,
+            chunks: 'async',
+            minChunks: 2,
+            minSize: 0,
+            maxAsyncRequests: 5, // 最大异步请求数， 默认5
+            name: 'static/js/common/async',
+            priority: 10,
+          },
         },
-      }
+        // 每一个项目的commonChunk
+        projectCommonChunkMap
+      )
     },
     minimizer: [
       new TerserJSPlugin(),
@@ -67,10 +67,11 @@ const webpackProdConfig = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[chunkhash].css',
-    }),
+    })
+  ].concat(
     // 每一个项目的htmlWebpackPlugin
-    ...getPHWPConfigList('production').map(config => new HtmlWebpackPlugin(config)),
-  ]
+    getPHWPConfigList('production').map(config => new HtmlWebpackPlugin(config))
+  )
 };
 
 module.exports = merge(
