@@ -53,6 +53,7 @@
     "postcss-px-to-viewport": "^1.1.0",
     "precss": "^4.0.0",
     "sass-loader": "^7.1.0",
+    "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "terser-webpack-plugin": "^1.2.3",
     "url-loader": "^1.1.2",
