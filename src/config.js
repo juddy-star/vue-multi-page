@@ -2,7 +2,10 @@ module.exports = {
   // 域路径
   domain: 'serverApp',
   dev: {
-    whiteList: [],
+    whiteList: [
+      'topic',
+      'activity',
+    ],
     blackList: [],
   },
 };
