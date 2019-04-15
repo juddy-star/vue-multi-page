@@ -12,10 +12,32 @@
 
 > ### npm run dev 开发模式
 
+#### demo git分支
+
+```js
+git fetch  
+git checokut -b demo origin/demo
+```
+
 #### 访问地址
 
 - [history 模式: http://0.0.0.0:8080/${domain}/${projectName}/home](http://0.0.0.0:8080/serverApp/topic/home)
 - [hash 模式: http://0.0.0.0:8080/${domain}/${projectName}/#/home](http://0.0.0.0:8080/serverApp/activity/#/home)
+
+> ### npm run cli 注册cli
+
+#### cli 命令
+
+```js
+  wap-cli -c 引导用户生成单页应用
+```
+
+#### cli 选项
+
+- 项目名称
+- 文件夹名称
+- vue插件【vue-router, vuex】
+- vue-router mode选项 【hash, history】
 
 > ### npm run build 生产模式
 
