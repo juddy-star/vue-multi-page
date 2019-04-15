@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "webpack-dev-server --color --progress --config build/dev.js",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "cli": "cd bin && npm link && cd .."
+  },
+  "bin": {
+    "wap-cli": "bin/index.js"
   },
   "repository": {
     "type": "git",
