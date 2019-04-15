@@ -20,6 +20,17 @@ const resolve = (...srcs) => {
   return path.resolve.apply(path, [process.cwd()].concat(srcs));
 };
 
+/**
+ * 是否是目录
+ *
+ * @param {string} [path='']
+ * @returns
+ */
+const isDirectory = (path = '') => {
+  if (!path) return false;
+
+  return fs.lstatSync(path).isDirectory();
+};
 
 /**
  * 得到所有项目的文件夹名称列表
@@ -28,7 +39,7 @@ const resolve = (...srcs) => {
  * @returns
  */
 const getProjectFolderNameList = (projectUpperDir = '') => {
-  return fs.readdirSync(projectUpperDir);
+  return fs.readdirSync(projectUpperDir).filter(name => isDirectory(resolve(projectUpperDir, name)));
 };
 
 /**
@@ -60,6 +71,7 @@ const islegalProjectName = (projectName = '') => {
  */
 const getProjectConfigMap = (env = 'production') => {
   const projectFolderNameList = getProjectFolderNameList(projectUpperDir);
+  if (projectFolderNameList.length === 0) throw new Error('at least one page: please add one page to project (see readme.md demo branch example)');
 
   const generateProjectConfigMap = (total = {}, projectFolderName = '') => {
     const projectConfig = getProjectConfig(projectFolderName);
