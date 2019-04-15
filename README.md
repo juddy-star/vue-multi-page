@@ -45,6 +45,8 @@ git checokut -b demo origin/demo
 
 - ### 多个 spa 项目共用一套 webpack 打包工具
 
+- ### 通过cli命令，一键生成spa
+
 - ### 所有公共资源只打包一份，避免相同资源重复打包
 
 - ### 每一个 spa 项目仅引入自身需要的 bundle（避免上下文互相污染）
