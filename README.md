@@ -29,14 +29,14 @@ git checokut -b demo origin/demo
 #### cli 命令
 
 ```js
-  wap-cli -c 引导用户生成单页应用
+  wap-cli -c 引导用户生成单页应用
 ```
 
 #### cli 选项
 
 - 项目名称
 - 文件夹名称
-- vue插件【vue-router, vuex】
+- vue插件【vue-router, vuex】
 - vue-router mode选项 【hash, history】
 
 > ### npm run build 生产模式
